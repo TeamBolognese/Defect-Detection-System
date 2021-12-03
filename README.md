@@ -19,14 +19,16 @@
 
 [getter.py](getter.py) - Извлечение пикселей из фото
 
-Для запуска бекенда необходимо:
+Для запуска проекта необходимы:
 ```
 sudo apt install python3.9
 sudo apt install python3-pip
 pip3 install bottle
+pip3 install numpy
+pip3 install opencv-python
 pip3 install sqlite3
 pip3 install Pillow
-python3 bottle_app.py
+python3 app.py
 ```
 
 Также проект уже развернут и готов к использованию по адресу:<br> https://accenture-final.teambolognese.ru/
