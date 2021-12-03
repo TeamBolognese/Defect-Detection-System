@@ -1,1 +1,7 @@
-# Name-LeadersOfDigital-Final
+# Проект аналитики качества сырья
+
+## Структура проекта
+
+[Backend](app.py) - веб-сервер на bottle + sqlite3
+
+[Backend](getter.py) - Извлечение пикселей из фотографии
