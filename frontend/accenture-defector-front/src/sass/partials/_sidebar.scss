@@ -1,0 +1,72 @@
+
+// [ DASHBOARD ]
+aside {
+    position: fixed;
+    width: 270px; height: 100vh;
+    top: 0; left: 0;
+    padding: var(--m-tiny);
+    border-right: 2px solid $line;
+}
+
+// [ section: logo ]
+aside .logo {
+    font-size: 1.8rem;
+    width: 100%; margin-top: 0;
+    margin-bottom: varset('--m-big + 10px');
+    text-align: center;
+}
+
+// [ section: nav ]
+aside nav {
+    width: 100%;
+    margin-bottom: var(--m-big);
+    flex-wrap: wrap;
+    @include flex-align(def, flex-start, column);
+
+    .nav-link {
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 17px 20px;
+        color: $grey;
+        font-size: 1.8rem;
+        transition: opacity 0.25s;
+    }
+
+    .nav-link:hover {
+        opacity: 0.7;
+    }
+
+    .nav-link.active {
+        background: $purple;
+        border-radius: 4px;
+        color: $white;
+        opacity: 1;
+        @extend .shadow-purple;
+    }
+}
+
+// [ section: reminder ]
+aside .reminder {
+    width: 100%; min-height: 120px;
+    padding: 15px;
+    background: $white; 
+    border-radius: 6px;
+    flex-wrap: wrap;
+    @extend .shadow-black;
+    @include flex-align(def, flex-start, column);
+
+    p, div { margin: 0 }
+}
+aside .reminder .time-badge {
+    margin-bottom: 15px;
+}
+aside .reminder .title {
+    margin-bottom: 6px;
+    color: $d-grey;
+    font-size: 1.6rem;
+}
+aside .reminder .supplier {
+    margin-bottom: 10px;
+    color: $grey;
+    font-size: 1.4rem;
+}
