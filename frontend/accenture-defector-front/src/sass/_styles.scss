@@ -1,0 +1,83 @@
+
+// [ GENERAL ]
+html { font: $font; font-weight: $f-normal; font-weight: $f-medium; }
+body {
+    background: $d-white;
+    color: $d-grey;
+    font-smooth: antialiased;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden !important;
+}
+
+a { 
+    color: $d-grey;
+}
+
+// CTA buttons
+.CTA {
+    max-width: max-content !important;
+    padding: 17px 20px;
+    color: $white;
+    font-size: 1.8rem;
+    border-radius: 4px;
+    background: $purple;
+    cursor: pointer;
+    transition: opacity 0.25s;
+    @extend .shadow-purple;
+
+    &.bg-orange {
+        @extend .shadow-orange;
+    }
+
+    &:hover {
+        opacity: 0.9;
+    }
+}
+.CTA-small {
+    @extend .CTA;
+    padding: 10px 15px;
+}
+
+// badges
+.badge {
+    max-width: max-content !important;
+    padding: 5px 10px;
+    color: $white;
+    font-size: 1.6rem;
+    background: $orange !important;
+    border-radius: 3px;
+}
+
+.progress {
+    @include flex-align;
+}
+
+
+// [ CUSTOMS ]
+.shadow-black { 
+    box-shadow: 0 0 12px 0 rgba(#000, 0.05);
+}
+.shadow-purple { 
+    box-shadow: 0 0 11px 0 rgba($purple, 0.5);
+}
+.shadow-orange { 
+    box-shadow: 0 0 11px 0 rgba($orange, 0.4);
+}
+
+.bg-orange { 
+    background: $orange;
+}
+
+
+// [ MAIN ]
+main {
+    width: 100%; height: auto; min-height: 100vh;
+}
+
+svg.ico {
+    width: 22px; height: 22px; 
+}
+
+
+
+
