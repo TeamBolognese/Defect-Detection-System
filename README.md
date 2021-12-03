@@ -40,4 +40,4 @@ pip3 install Pillow
 python3 app.py
 ```
 
-Также проект уже развернут и готов к использованию по адресу:<br> https://accenture-final.teambolognese.ru/ (backend) <br> https://accenture-defector.vercel.app/suppliers-overview (frontend)
+Также проект уже развернут и готов к использованию по адресу:<br> https://final.teambolognese.ru/ (backend) <br> https://accenture-defector.vercel.app/suppliers-overview (frontend)
