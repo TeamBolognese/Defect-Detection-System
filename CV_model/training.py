@@ -6,7 +6,7 @@ from collections import Counter
 import numpy as np
 
 for w in ['1','2','4','5']:
-    im = Image.open("datasets/training_data/"+w+".png") # some training
+    im = Image.open("datasets/training_data/"+w+".png") # фотографии с помеченным браком 
     pix = im.load()
 
     cords = []
@@ -16,13 +16,15 @@ for w in ['1','2','4','5']:
             if(pix[i,j][:3] == (255, 0, 0)):
                 cords.append([i,j]) # сбор координат помеченного брака
 
-    im = Image.open("datasets/bads/"+w+".png") # open original defect-photo
+    im = Image.open("datasets/bads/"+w+".png") # сбор брака
     pix = im.load()
 
     deffarr = []
 
     for i in cords:
         deffarr.append(pix[i[0],i[1]])
+
+    # Анализ
 
     print(stats.describe(deffarr))
     print("np median: ", np.median(deffarr))
