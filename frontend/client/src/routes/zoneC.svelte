@@ -16,6 +16,7 @@
 
 
     // [ PROPS ]
+    let analytics_received  = false;
     let acceptance_complete = false;
     const analytics = {
         defects:     false,      // has defects / no defects
@@ -23,32 +24,18 @@
         invoice:     2100205,    // price of no-defect cargo
     }
 
-
-    //@ upload > img
-    let img;
-
-    async function uploadImg(){
-
-        const dataArray = new FormData();
-        dataArray.append("uploadFile", img);
-
-        let res = await fetch("https://accenture-final.teambolognese.ru/upload", {
-            mode: 'cors',
-            method: "POST",
-            headers: {
-                "Access-Control-Allow-Origin": "*",
-                "Content-Type": "multipart/form-data",
-            },
-            body: dataArray
-        })
-
-        console.log(res.body)
-    } 
-
-
     onMount(() => {
         renderCanvas();
+
+        // get > image analytics from URI
+        const urlParams = new URLSearchParams(window.location.search);
+        let state = urlParams.get('state');
+
+        if( state !== null ) {
+            analytics_received = true
+        }
     });
+
 
 </script>
 
@@ -58,13 +45,26 @@
     <title>Monitoring</title>
 </svelte:head>
 
+<!-- modal: image analytics -->
+{#if analytics_received}
+    <div class="modal-result">
+        <div class="overlay" on:click={ () => { analytics_received = false } }></div>
+        <div class="message">
+            <h5 class="title">Результаты анализа:</h5>
+            <div class="content">
+                <p><img src="https://final.teambolognese.ru/res.png" alt="defect highlighted"></p>
+            </div>
+        </div>
+    </div>
+{/if}
+
 <main in:fade='{{ duration: 100 }}' out:fade|local='{{ duration: 100 }}' class = 'monitoring'>
 
     <!-- [ section: zone tabs ] -->
     <ul class = 'zone-tabs'>
         <li class="tab"><a href = '/'>Зона А</a></li>
-        <li class="tab active"><a href = 'zoneB'>Зона Б</a></li>
-        <li class="tab">Зона В</li>
+        <li class="tab"><a href = 'zoneB'>Зона Б</a></li>
+        <li class="tab active">Зона В</li>
     </ul>
 
     <!-- [ section: dashboard ] -->
@@ -79,9 +79,10 @@
         <!-- video canvas & analytics -->
         <div class="monitor">
             <div class="video">
-                <form on:submit={ uploadImg }>
-                    <input type = 'file' bind:files={ img } class = 'CTA bg-orange' />
-                    <a on:click={ uploadImg } class = 'CTA bg-orange upload'>upload</a>
+                <form method="post" class = 'upload-form' enctype="multipart/form-data" action = 'http://localhost:3333/getimg'>
+                    <p class = 'description'>Загрузите изображение, чтобы проанализировать его</p>
+                    <input type = 'file' name = 'img' class = 'CTA bg-orange' />
+                    <button type = 'submit' name = 'submit' class = 'CTA bg-orange upload'>анализ</button>
                 </form>
             </div>
             <Analytics { analytics } />

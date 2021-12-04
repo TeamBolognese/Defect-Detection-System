@@ -1,16 +1,19 @@
 
-export function renderCanvas() {
+export function renderCanvas( percentage = 0 ) {
     let circles = document.querySelectorAll('canvas.progress');
 
     circles.forEach(circle => {
         let value = +circle.getAttribute('value');
-        let percentage = value * 100 + '%';
+        if( percentage === 'undefined' ) {
+            percentage = value * 100 + '%';
+        }
+        percentage = Math.round(percentage);
         let ctx = circle.getContext('2d');
 
         // draw > percentage
         ctx.font = "18pt Montserrat";
         ctx.fillStyle  = "#C65BEC";
-        ctx.fillText(percentage, circle.width / 2 - 18, circle.height / 2 + 9);
+        ctx.fillText(percentage + '%', circle.width / 2 - 18, circle.height / 2 + 9);
 
         // draw > full circle
         ctx.lineWidth = 8;

@@ -28,7 +28,7 @@
 
 ## Инструкции по запуску
 
-Для запуска проекта необходимы:
+Инструкция для запуска бекенда:
 ```
 sudo apt install python3.9
 sudo apt install python3-pip
@@ -36,4 +36,14 @@ pip3 install bottle, matplotlib, numpy, sqlite3, Pillow
 python3 app.py
 ```
 
-Также проект уже развернут и готов к использованию по адресу: <br> https://final.teambolognese.ru/ (backend) <br> https://final-lemon-kappa.vercel.app/ (frontend, частично связанный с бэком)
+Инструкция для запуска фронтенда:
+```
+cd frontend
+npm install
+cd client
+npm install
+cd ../
+npm run dev
+```
+
+Также проект уже развернут и готов к использованию по адресу: <br> https://final.teambolognese.ru/ (backend) <br> https://final-lemon-kappa.vercel.app/ (frontend)

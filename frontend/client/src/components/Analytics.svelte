@@ -11,7 +11,7 @@
 <!-- [ TEMPLATE ] -->
 <div class="analytics">
     <p class = 'caption'>Анализ качества груза:</p>
-    {#if analytics.defects}
+    {#if analytics.status == 'bad'}
         <p class = 'estimation defect'>Обнаружен брак</p>
     {:else}
         <p class = 'estimation no-defect'>Брак не обнаружен</p>
@@ -20,9 +20,9 @@
 
     <div class="defect-rate">
         <!-- <img src="/img/circle-progress.png" alt="defect-rate"> -->
-        <canvas class = 'progress' value = { analytics.defect_rate }></canvas>
+        <canvas class = 'progress' value = { analytics.percent }></canvas>
         <span class="caption">Процент брака</span>
     </div>
 
-    <p class="invoice">{ '₽ ' + analytics.invoice }</p>
+    <p class="invoice">счет: { '₽ ' + analytics.invoice }</p>
 </div>
