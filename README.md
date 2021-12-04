@@ -31,12 +31,7 @@
 ```
 sudo apt install python3.9
 sudo apt install python3-pip
-pip3 install bottle
-pip3 install matplotlib
-pip3 install numpy
-pip3 install opencv-python
-pip3 install sqlite3
-pip3 install Pillow
+pip3 install bottle, matplotlib, numpy, sqlite3, Pillow
 python3 app.py
 ```
 
