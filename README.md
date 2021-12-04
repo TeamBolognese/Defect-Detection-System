@@ -1,4 +1,5 @@
-## Не конечная версия продукта, репозиторий заполняется.
+# Defect-Detection System
+![image](https://user-images.githubusercontent.com/47640060/144697586-762b36a0-4f6a-4d66-b500-843c1920154a.png)
 
 ## Концепт
 
