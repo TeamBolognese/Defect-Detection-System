@@ -25,7 +25,6 @@ for w in ['1','2','4','5']:
         deffarr.append(pix[i[0],i[1]])
 
     # Анализ
-
     print(stats.describe(deffarr))
     print("np median: ", np.median(deffarr))
     print("np mean: ", np.mean(deffarr))
