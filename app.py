@@ -31,8 +31,8 @@ def show_index():
 <body>
 <h2>Навигация</h2>
 <h3>API endpoints:</h3>
-<p>- <b><a href="/upload">/upload</a></b> - Форма загрузки фрагмента изображения для определения факта наличия брака<br></p>
-<p>- <b>/api/upload</b> - API загрузки<br></p>
+<p>- <b><a href="/detect">/detect</a></b> - Форма загрузки фрагмента изображения для определения факта наличия брака<br></p>
+<p>- <b>/api/detect</b> - API загрузки<br></p>
 <p>- <b><a href="/detail">/detail</a></b> - Форма загрузки фрагмента изображения для полного анализа<br></p>
 <p>- <b>/api/detail</b> - API загрузки<br><br></p>
 <p><h3>Video record:</h3></p>
@@ -137,19 +137,19 @@ def do_detail():
 def serve_pictures(picture):
     return static_file(picture, root='')
 
-@route('/upload')
-def upload_form():
+@route('/detect')
+def detect_form():
     response.set_header('Access-Control-Allow-Origin', '*')
     return '''
-<form action="/api/upload" method="post" enctype="multipart/form-data">
+<form action="/api/detect" method="post" enctype="multipart/form-data">
   Select image to upload:
   <input type="file" name="img" id="img">
   <input type="submit" value="Upload Image" name="submit">
 </form>
 '''
 
-@route('/api/upload', method='POST')
-def do_upload():
+@route('/api/detect', method='POST')
+def do_detect():
     response.set_header('Access-Control-Allow-Origin', '*')
     i = "photo" + str(randint(0,2**30))
     postdata = request.body.read()
