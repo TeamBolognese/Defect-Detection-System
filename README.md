@@ -19,7 +19,7 @@
 
 [Backend](app.py) - веб-сервер на bottle + sqlite3 + легкая модель (факт брака)
 
-[CV Algorithm](mid/main.py) - CV-модель (полноценный анализ фрагментов потока)
+[CV Algorithm](CV_model/) - CV-модель (полноценный анализ фрагментов потока)
 
 [Frontend](https://github.com/TeamBolognese/Name-LeadersOfDigital-Final/tree/front) - Фронтенд-сервер
 
