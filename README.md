@@ -40,4 +40,4 @@ pip3 install Pillow
 python3 app.py
 ```
 
-Также проект уже развернут и готов к использованию по адресу:<br> https://final-lemon-kappa.vercel.app/ (frontend+backend) <br> https://final.teambolognese.ru/ (backend)
+Также проект уже развернут и готов к использованию по адресу: <br> https://final.teambolognese.ru/ (backend) <br> https://final-lemon-kappa.vercel.app/ (frontend, частично связанный с бэком)
