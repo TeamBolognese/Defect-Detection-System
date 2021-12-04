@@ -1,0 +1,105 @@
+
+// [ MONITORING PAGE ]
+
+// [ section: zone tabs ]
+.monitoring .zone-tabs {
+    margin: 0; margin-bottom: var(--m-big);
+    padding: 0;
+    @include flex-align(flex-start, flex-start);
+}
+.monitoring .zone-tabs .tab {
+    padding: 0 12px; padding-bottom: 10px;
+    margin-right: var(--m-medium);
+    color: $grey;
+    font-size: 1.6rem;
+    border-bottom: 3px solid transparent;
+    cursor: pointer;
+    transition: opacity 0.25s, border-color 0.25s;
+
+    &:hover {
+        opacity: 0.7;
+        border-color: rgba($purple, 0.2); 
+    }
+
+    &.active {
+        color: $d-grey;
+        opacity: 1;
+        border-color: $purple;
+    }
+}
+
+
+// [ section: dashboard ]
+.monitoring .dashboard .process-info {
+    color: $d-grey;
+    font-size: 2rem;
+
+    .supplier {
+        display: block;
+        margin-bottom: 5px;
+        color: $grey;
+        font-size: 1.6rem;
+    }
+}
+
+.monitoring .dashboard .monitor {
+    margin-bottom: var(--m-medium);
+    @include flex-align(flex-start, center);
+}
+.monitoring .dashboard .monitor .video {
+    position: relative;
+    width: 65%;
+    aspect-ratio: 6/4;
+    border-radius: 6px;
+    background: $grey;
+    margin-right: var(--m-tiny);
+    overflow: hidden;
+    @include flex-align;
+
+    video {
+        margin: 0;
+        padding: 0;
+        height: 180%;
+        transform: rotate(-90deg);
+    }
+
+    &.uploaded form       { opacity: 0; background: rgba(5, 8, 15, 0.5); }
+    &.uploaded:hover form { opacity: 1 }
+
+    form {
+        transition: opacity 0.25s;
+        z-index: 2;
+    }
+    .uploaded-img {
+        position: absolute;
+        width: 100%;
+        z-index: 1;
+    }
+}
+
+.monitoring .dashboard .hidden-area {
+    gap: 20px;
+    @include flex-align(flex-start);
+}
+
+
+// [ section: process schedule ]
+.monitoring .process-schedule {
+    margin: var(--m-big) 0;
+}
+.monitoring .process-schedule .caption {
+    margin: 0; margin-bottom: 25px; color: $grey; font-size: 1.6rem;
+}
+.monitoring .process-schedule .sched-row {
+    margin: 0; margin-bottom: 15px; color: $grey; font-size: 1.8rem;
+
+    &.active {
+        margin-bottom: 25px;
+        color: $d-grey; font-size: 2rem;
+    }
+    .time {
+        display: inline-block;
+        width: 60px;
+        margin-right: 20px;
+    }
+}
